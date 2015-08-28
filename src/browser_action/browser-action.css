@@ -1,0 +1,27 @@
+#inbound {
+	font-family: 'Roboto', sans-serif;
+	width: 400px;
+	padding: 20px;
+	border: 1px solid #eaeaea;
+}
+
+#inbound .row{
+	text-align: left;
+	margin: 3px 0;
+}
+.labelo{
+	padding: 6px 0;
+}
+.post-inbound{
+	padding: 6px 15px;
+	display: inline-block;
+	background: #10A4FF;
+	border-radius: 4px;
+	color: #fff;
+	margin-right: 15px;
+}
+.post-inbound:hover{
+	background: #42577B;
+	color: #fff;
+	text-decoration: none;
+}
