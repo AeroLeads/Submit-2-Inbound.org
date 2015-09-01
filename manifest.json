@@ -1,6 +1,6 @@
 {
   "name": "Submit 2 Inbound.org",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "Submit current page to InBound.org from your Chrome Plugin with a single click",
   "homepage_url": "https://aeroleads.com",

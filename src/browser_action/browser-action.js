@@ -6,21 +6,21 @@
 	var global_desc  = "";
 
 
-	var code = 'var meta = document.querySelector("meta[name=\'description\']");' + 
-	'if (meta) meta = meta.getAttribute("content");' +
-	'({' +
-		'    title: document.title,' +
-		'    description: meta || ""' +
-		'});';
+	// var code = 'var meta = document.querySelector("meta[name=\'description\']");' + 
+	// 'if (meta) meta = meta.getAttribute("content");' +
+	// '({' +
+	// 	'    title: document.title,' +
+	// 	'    description: meta || ""' +
+	// 	'});';
 
-chrome.tabs.executeScript({code: code}, function(results) {
-	if (!results) {
-		return;
-	}
-	result = results[0];
-	$(".inbound-desc").val(result.description);
-	global_desc = result.description;
-});
+// chrome.tabs.executeScript({code: code}, function(results) {
+// 	if (!results) {
+// 		return;
+// 	}
+// 	result = results[0];
+// 	$(".inbound-desc").val(result.description);
+// 	global_desc = result.description;
+// });
 
 chrome.tabs.getSelected(null,function(tab) {
 	var tablink = tab.url;
@@ -38,12 +38,10 @@ $(".post-inbound").on("click", function(){
 	
 	var this_url = $(".inbound-url").val();
 	var this_title = $(".inbound-title").val();
-	var this_desc = $(".inbound-desc").val();
 
 	var data = {
 		url : this_url,
 		title : this_title,
-		desc : this_desc
 	};
 
 	chrome.storage.sync.set({inbound_data : data}, function() {
@@ -56,7 +54,6 @@ $(".post-inbound").on("click", function(){
 $(".remove-inbound").on("click", function(){
 	$(".inbound-url").val('');
 	$(".inbound-title").val('');
-	$(".inbound-desc").val('');
 
 	chrome.storage.sync.remove("inbound_data");
 });
